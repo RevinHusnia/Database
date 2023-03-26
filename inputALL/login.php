@@ -62,11 +62,16 @@ if(isset($_POST["login"])) {
     <title>Login</title>
 </head>
 <body>
-    <div class="box">
 
+<!-- navbar end -->
+
+
+
+<img src="/inputALL/img/bg.jpg" alt="">
+<div class="box">
     </div>
     <?php if(isset($error)) : ?>
-    <p>Password / Username salah</p>
+    <p class="phpp">Password / Username salah</p>
     <?php endif; ?>
 
     <h1>Login Page</h1>
@@ -95,7 +100,16 @@ if(isset($_POST["login"])) {
             <button type="submit" name="login">
             <i class='fas fa-file-import' style='font-size:14px'></i>Login</button>
         </div>
-        <a href="singup.php">Login</a>
+        <p class="pa" style="color: white; font-size: 1xp;" >Forgot Password/Email?  <a href="singup.php">Sign Up</a></p>
+        
+        
+        <div class="cookie">
+            <label for="remember"></label>
+            <input type="checkbox" name="remember" id="remember" class="inputco">
+            <p class="remember">Remember Me</p>
+        </div>
+        <div class="divp">
+        </div>
     </div>
 </form>
 </body>

@@ -4,9 +4,10 @@ $conn = mysqli_connect("localhost", "root", "", "revin");
 
 function signup($data){
     global $conn;
-    $email = strtolower(stripslashes($data["email"]));
-    $password = mysqli_real_escape_string($conn, $data["password"]);
-    $password2 = mysqli_real_escape_string($conn, $data["password2"]);
+    $email = htmlspecialchars(strtolower(stripslashes($data["email"])));
+    $password = htmlspecialchars(mysqli_real_escape_string($conn, $data["password"]));
+    $password2 = htmlspecialchars(mysqli_real_escape_string($conn, $data["password2"]));
+    $gender = htmlspecialchars(mysqli_real_escape_string($conn, $data["gender"]));
 
     $result = mysqli_query($conn, "SELECT email FROM dataacc WHERE email = '$email'");
 
@@ -25,7 +26,7 @@ function signup($data){
     }
 
     $password = password_hash($password, PASSWORD_DEFAULT);
-    mysqli_query($conn, "INSERT INTO dataacc VALUES ('', '$email', '$password')");
+    mysqli_query($conn, "INSERT INTO dataacc VALUES ('', '$email', '$password', '$gender')");
 
     return mysqli_affected_rows($conn);
 
@@ -33,13 +34,31 @@ function signup($data){
 function buy($data){
     global $conn;
 
-    $username = strtolower(stripslashes($data["username"]));
-    $title = strtolower(stripcslashes($data["title"]));
-    $type = strtolower(stripslashes($data["type"]));
-    $materials = strtolower(stripslashes($data["materials"]));
-    $number = strtolower(stripslashes($data["number"]));
+    $username = htmlspecialchars(strtolower(stripslashes($data["username"])));
+    $title = htmlspecialchars(strtolower(stripcslashes($data["title"])));
+    $type = htmlspecialchars(strtolower(stripslashes($data["type"])));
+    $materials = htmlspecialchars(strtolower(stripslashes($data["materials"])));
+    $number = htmlspecialchars(strtolower(stripslashes($data["number"])));
 
     mysqli_query($conn, "INSERT INTO inputorder VALUES('', '$username', '$title', '$type', '$materials', '$number')");
+
+    return mysqli_affected_rows($conn);
+
+}
+
+function call($query){
+    global $conn;
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+    while($row = mysqli_fetch_assoc($result)){
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
+function hapus($id){
+    global $conn;
+    mysqli_query($conn, "DELETE FROM inputorder WHERE id = $id");
 
     return mysqli_affected_rows($conn);
 

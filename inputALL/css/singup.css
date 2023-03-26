@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+img{
+    position: absolute;
+    width: 100%;
+    height: 110vh;
+}
 body{
     justify-content: center;
     display: flex;
@@ -11,67 +16,73 @@ body{
     min-height: 90vh;
     flex-direction: column;
     gap: 30px;
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
 .box{
+    margin-top: -50px;
+    backdrop-filter: blur(15px);
     position: absolute;
     width: 400px;
-    height: 400px;
+    height: 490px;
     border: 2px solid white;
     box-shadow: 16px 14px 20px gray;
     border-radius: 10px;
 }
 
+
 h1{
+    position: relative;
     font-size: 40px;
     text-align: center;
 }
-/* .inputall{  
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}    */
+
 
 input{
+    font-size: 20px;
+    border-radius: 3px;
     position: relative;
-    width: 300px;
-    height: 30px;
+    width: 350px;
+    height: 40px;
 }
 
 .btn{
+    border-radius: 4px;
     justify-content: center;
     align-items: center;
     display: flex;
 }
 
-.btn :hover{
-    background-color: rgb(34,193,195);
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,82,253,1) 100%);;
+.btn:hover{
+    background-color: gray;
     border-radius: 5px;
     transition: .3s ease-in-out;
     transform: .2;
-    color: brown;
 }
 
 .btn-2{
     position: relative;
-    width: 200px;
-    height: 30px;
+    width: 250px;
+    height: 40px;
 }
 
 a{
     position: relative;
     font-size: 20px;
-    text-decoration: none;
     color: black;
 }
 
 a:hover{
+    color: black;
     position: relative;
-    color: red;
     transition: .2s ease-in-out;
     transform: .3;
+}
+
+p{
+    font-size: 17px;
+    position: relative;
+}
+
+i{
+    position: relative;
 }

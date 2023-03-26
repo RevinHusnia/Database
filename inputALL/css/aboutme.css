@@ -1,0 +1,111 @@
+*,html,body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
+:root{
+    --bg--primary: rgb(0, 0, 221);
+    --bg--secondary: white;
+    --txt--primary: white;
+    --txt--secondary: black;
+
+}
+
+
+.container{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-color: var(--bg--primary);
+}
+
+.wrapper{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 40%;
+    background-color: var(--bg--secondary);
+    color: var(--txt--secondary);
+    margin: 8px;
+    padding: 32px;
+    border: 1px solid white;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-center{
+    text-align: center;
+}
+
+.font{
+    margin-top: 8px;
+    font-size: 25px;
+}
+
+h1{
+    font-size: 2em;
+}
+
+p{
+    margin-top: 8px;
+    font-size: .8em;
+}
+
+a{
+    font-size: 20px;
+    color: var(--txt--secondary);
+    text-decoration: none;
+}
+
+button{
+    height: 60px;
+    font-size: 15px;
+    background-color: white;
+    margin: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover{
+    width: 80%;
+    background-color: var(--bg--primary);
+    color: var(--txt--primary);
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
+    transform: .2;
+    transition: .2s ease-in-out;
+}
+
+
+a:hover{
+    width: 100%;
+    background-color: var(--bg--primary);
+    color: var(--txt--primary);
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
+    transform: .2;
+    transition: .2s ease-in-out;
+}
+
+@media screen and (max-width: 450px){
+    .card{
+        width: 95%;
+    }
+
+    h1{
+        font-size: 2.5em;
+    }
+
+    .font{
+        font-size: 30px;
+    }
+
+    p{
+        font-size: 1em;
+    }
+}

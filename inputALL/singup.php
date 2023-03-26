@@ -6,6 +6,9 @@ if(isset($_POST["singup"])) {
         echo "<script>
                 alert('save success');
             </script>";
+
+            header("Location: login.php");
+            exit;
     }
     else{
         mysqli_errno($conn);
@@ -36,14 +39,17 @@ if(isset($_POST["singup"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Sing Up</title>
 
-
+!
 
 
 </head>
 <body>
+        <img src="/inputALL/img/bgg.jpg" alt="">
     <div class="box">
 
     </div>
@@ -72,12 +78,23 @@ if(isset($_POST["singup"])) {
                 <input name="password2" type="password" id="password2" placeholder="Confirm Password">
             </div>
             <br>
+            <div class="">
+                <label for="gender"></label>
+                <i class="fa fa-venus-mars" style="font-size:17px"></i>
+                <input list="browsers" name="gender" type="choice" id="gender" placeholder="Gender">
+
+                <datalist id="browsers">
+                    <option value="Man">
+                    <option value="Women">
+                </datalist>
+            </div>
+            <br>
             
             <div class="btn">
                 <button class="btn btn-2" type="submit" name="singup">
                 <i class='fas fa-file-import' style='font-size:14px'></i>SignUp</button>
             </div>
-            <a href="login.php">SignIn</a>
+            <p>Already have an account <a href="login.php">SignIn</a></p>
         </div>
     </form>
 </body>
